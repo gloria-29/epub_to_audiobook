@@ -14,13 +14,13 @@ services:
   epub_to_audiobook:
     image: ghcr.io/p0n1/epub_to_audiobook:latest
     environment:
-      MS_TTS_KEY: <your_subscription_key>
-      MS_TTS_REGION: <your_region>
+      MS_TTS_KEY: fc4a059464bd40199c1928821c2b0eca
+      MS_TTS_REGION: eastasia
       # for custom OpenAI-compatible endpoints
-      # OPENAI_BASE_URL: <your_openai_base_url>
-      OPENAI_API_KEY: <your_openai_api_key>
+      OPENAI_BASE_URL: http://129.146.24.46:8000/v1
+      OPENAI_API_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTI1OTk2MDgsInVzZXIiOnsiaWQiOiIxOTk3MTc1MDk0NTA5NTY4MDYiLCJuYW1lIjoiZ2xvcmlhMjkiLCJhdmF0YXIiOiJodHRwczovL2Nkbi5oYWlsdW9haS5jb20vcHJvZC91c2VyX2F2YXRhci8xNzA2MjY3NTQ0Mzg5ODIwODAxLTE3MzE5NDU3MDY2ODk2NTg5Nm92ZXJzaXplLnBuZyIsImRldmljZUlEIjoiMzg3MDgwNzE0Nzg0ODI1MzQ1IiwiaXNBbm9ueW1vdXMiOmZhbHNlfX0.rxjyNf_guRTMxQSb7HS0O65zpdhg4z4ytdxZt6y5YWc
     ports:
-      - "7860:7860"
+      - "8082:8082"
     volumes:
       - ./:/app
-    command: 'python3 /app_src/main_ui.py --host 0.0.0.0 --port 7860'
+    command: 'python3 /app_src/main_ui.py --host 0.0.0.0 --port 8082'
